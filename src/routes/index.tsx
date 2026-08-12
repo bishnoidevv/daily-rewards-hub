@@ -62,8 +62,14 @@ const faqs = [
 
 function AppleLogo({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M16.365 1.43c0 1.14-.417 2.09-1.25 2.85-.834.76-1.83 1.2-2.99 1.13-.03-1.06.41-2.03 1.24-2.84.83-.81 1.87-1.24 3-1.14zM20.6 17.02c-.35.81-.77 1.56-1.26 2.26-.67.95-1.22 1.61-1.65 1.98-.5.45-1.04.69-1.62.7-.42 0-.92-.12-1.51-.36-.6-.24-1.14-.36-1.65-.36-.53 0-1.09.12-1.68.36-.6.25-1.08.37-1.45.38-.56.02-1.11-.22-1.65-.72-.46-.4-1.04-1.09-1.73-2.06-.74-1.04-1.35-2.25-1.83-3.62C4.5 14.1 4.24 12.66 4.24 11.3c0-1.56.34-2.9 1.01-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.86-.82.45 0 1.04.14 1.77.41.73.28 1.2.42 1.4.42.15 0 .67-.16 1.55-.49.83-.3 1.53-.43 2.11-.38 1.56.13 2.73.75 3.51 1.86-1.4.85-2.09 2.04-2.07 3.56.01 1.19.44 2.18 1.28 2.96.38.36.81.64 1.28.84-.1.3-.21.58-.33.86z" />
+    <svg
+      viewBox="0 0 170 210"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+      shapeRendering="geometricPrecision"
+    >
+      <path d="M139.7 111.4c.2 23.6 20.7 31.5 21 31.6-.2.6-3.3 11.4-11 22.5-6.6 9.7-13.5 19.3-24.4 19.5-10.7.2-14.2-6.3-26.4-6.3-12.3 0-16 6.1-26.1 6.5-10.5.4-18.5-10.4-25.2-20-14.6-21-25.8-59.4-10.8-85.3 7.5-12.9 20.8-21 35.3-21.2 10.4-.2 20.1 7 26.4 7 6.3 0 18.2-8.6 30.6-7.4 5.2.2 19.9 2.1 29.3 15.9-.8.5-17.5 10.2-17.7 30.2M114.6 31.7C120.2 24.9 124 15.5 123 6c-8.3.3-18.4 5.5-24.2 12.3-5.2 6-9.5 15.6-8.3 24.8 9.3.7 18.5-4.7 24.1-11.4" />
     </svg>
   );
 }
@@ -72,7 +78,7 @@ function Cta({ label = "Start Now" }: { label?: string }) {
   return (
     <a
       href="#start"
-      className="block w-full rounded-full bg-primary py-4 text-center text-lg font-semibold text-primary-foreground transition-transform active:scale-[0.98]"
+      className="flex h-[54px] w-full items-center justify-center rounded-[14px] bg-primary text-[17px] font-semibold tracking-[-0.01em] text-primary-foreground transition-all duration-150 active:scale-[0.97] active:brightness-95"
       style={{ boxShadow: "var(--shadow-cta)" }}
     >
       {label}
