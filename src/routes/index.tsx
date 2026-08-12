@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import cashCard from "@/assets/cash-card.jpg";
+import cashCard from "@/assets/apple-cash-card.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
