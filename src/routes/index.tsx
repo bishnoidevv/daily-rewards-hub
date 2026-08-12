@@ -31,18 +31,44 @@ const steps = [
 ];
 
 const categories = [
-  "Mobile Gaming Apps",
-  "Subscriptions",
-  "Free Trials",
-  "Shopping Deals",
-  "Financial Services",
+  {
+    label: "Mobile Gaming Apps",
+    bg: "oklch(0.955 0.025 275)",
+    border: "oklch(0.9 0.05 275)",
+    fg: "oklch(0.52 0.19 272)",
+  },
+  {
+    label: "Subscriptions",
+    bg: "oklch(0.96 0.025 40)",
+    border: "oklch(0.9 0.06 35)",
+    fg: "oklch(0.62 0.2 27)",
+  },
+  {
+    label: "Free Trials",
+    bg: "oklch(0.94 0.04 350)",
+    border: "oklch(0.89 0.08 350)",
+    fg: "oklch(0.6 0.24 350)",
+  },
+  {
+    label: "Shopping Deals",
+    bg: "oklch(0.95 0.03 240)",
+    border: "oklch(0.89 0.06 240)",
+    fg: "oklch(0.55 0.2 250)",
+  },
+  {
+    label: "Financial Services",
+    bg: "oklch(0.945 0.035 165)",
+    border: "oklch(0.89 0.06 165)",
+    fg: "oklch(0.55 0.12 175)",
+  },
 ];
 
 const tiers = [
-  { deals: "5 Finished Deals", payout: "$150" },
-  { deals: "10 Finished Deals", payout: "$300" },
-  { deals: "25 Finished Deals", payout: "$750" },
+  { deals: "5 Finished Deals", payout: "$150", bg: "oklch(0.92 0.025 75)", fg: "oklch(0.45 0.08 70)" },
+  { deals: "10 Finished Deals", payout: "$300", bg: "oklch(0.55 0.22 258)", fg: "oklch(1 0 0)" },
+  { deals: "25 Finished Deals", payout: "$750", bg: "oklch(0.55 0.15 150)", fg: "oklch(1 0 0)" },
 ];
+
 
 const faqs = [
   {
