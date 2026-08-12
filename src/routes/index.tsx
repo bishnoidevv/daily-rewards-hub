@@ -31,18 +31,44 @@ const steps = [
 ];
 
 const categories = [
-  "Mobile Gaming Apps",
-  "Subscriptions",
-  "Free Trials",
-  "Shopping Deals",
-  "Financial Services",
+  {
+    label: "Mobile Gaming Apps",
+    bg: "oklch(0.955 0.025 275)",
+    border: "oklch(0.9 0.05 275)",
+    fg: "oklch(0.52 0.19 272)",
+  },
+  {
+    label: "Subscriptions",
+    bg: "oklch(0.96 0.025 40)",
+    border: "oklch(0.9 0.06 35)",
+    fg: "oklch(0.62 0.2 27)",
+  },
+  {
+    label: "Free Trials",
+    bg: "oklch(0.94 0.04 350)",
+    border: "oklch(0.89 0.08 350)",
+    fg: "oklch(0.6 0.24 350)",
+  },
+  {
+    label: "Shopping Deals",
+    bg: "oklch(0.95 0.03 240)",
+    border: "oklch(0.89 0.06 240)",
+    fg: "oklch(0.55 0.2 250)",
+  },
+  {
+    label: "Financial Services",
+    bg: "oklch(0.945 0.035 165)",
+    border: "oklch(0.89 0.06 165)",
+    fg: "oklch(0.55 0.12 175)",
+  },
 ];
 
 const tiers = [
-  { deals: "5 Finished Deals", payout: "$150" },
-  { deals: "10 Finished Deals", payout: "$300" },
-  { deals: "25 Finished Deals", payout: "$750" },
+  { deals: "5 Finished Deals", payout: "$150", bg: "oklch(0.92 0.025 75)", fg: "oklch(0.45 0.08 70)" },
+  { deals: "10 Finished Deals", payout: "$300", bg: "oklch(0.55 0.22 258)", fg: "oklch(1 0 0)" },
+  { deals: "25 Finished Deals", payout: "$750", bg: "oklch(0.55 0.15 150)", fg: "oklch(1 0 0)" },
 ];
+
 
 const faqs = [
   {
@@ -201,91 +227,73 @@ function Index() {
         </section>
 
         {/* Deals */}
-        <section>
-          <p className="px-4 pb-2 text-[13px] font-medium tracking-[0.04em] text-muted-foreground uppercase">
-            Deals You&apos;ll See
+        <section
+          className="rounded-[26px] bg-card px-4 pt-4 pb-4"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <p className="text-[13px] font-semibold tracking-[-0.01em]">Deals You&apos;ll See</p>
+          <h2 className="ios-tight mt-1 text-[22px] leading-tight font-bold">
+            Choose offers that fit you.
+          </h2>
+          <p className="mt-1 text-[15px] leading-snug text-muted-foreground">
+            Pick a category. Finish deals. Earn $30 each.
           </p>
-          <div
-            className="rounded-[26px] bg-card px-5 py-4"
-            style={{ boxShadow: "var(--shadow-card)" }}
-          >
-            <h2 className="ios-tight text-[22px] leading-tight font-bold">
-              Choose offers that fit you.
-            </h2>
-            <p className="mt-1 text-[15px] leading-snug text-muted-foreground">
-              Pick a category. Finish deals. Earn $30 each.
-            </p>
-            <ul className="mt-2 divide-y divide-border">
-              {categories.map((c) => (
-                <li
-                  key={c}
-                  className="flex items-center justify-between gap-3 py-3.5 text-[17px] leading-snug font-normal tracking-[-0.01em]"
-                >
-                  <span className="min-w-0">{c}</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className="h-[17px] w-[17px] shrink-0 text-muted-foreground/70"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m9 6 6 6-6 6" />
-                  </svg>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="mt-3 flex flex-col gap-2.5">
+            {categories.map((c) => (
+              <li
+                key={c.label}
+                className="rounded-[12px] border py-3 text-center text-[15px] font-semibold tracking-[-0.01em]"
+                style={{ background: c.bg, borderColor: c.border, color: c.fg }}
+              >
+                {c.label}
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* Payout tiers */}
-        <section>
-          <p className="px-4 pb-2 text-[13px] font-medium tracking-[0.04em] text-muted-foreground uppercase">
-            Payout Tiers
-          </p>
-          <ul
-            className="divide-y divide-border overflow-hidden rounded-[26px] bg-card"
-            style={{ boxShadow: "var(--shadow-card)" }}
-          >
+        <section
+          className="rounded-[26px] bg-card px-4 pt-5 pb-4"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <h2 className="ios-tight text-center text-[26px] font-bold">Payout Tiers</h2>
+          <ul className="mt-4 flex flex-col gap-2.5">
             {tiers.map((t) => (
               <li
                 key={t.deals}
-                className="flex items-center justify-between px-5 py-3.5 text-[17px] tracking-[-0.01em]"
+                className="flex items-center justify-between rounded-[12px] px-4 py-3 text-[15px] font-semibold tracking-[-0.01em]"
+                style={{ background: t.bg, color: t.fg }}
               >
                 <span className="min-w-0 truncate">{t.deals}</span>
-                <span className="shrink-0 pl-3 font-semibold text-primary">{t.payout}</span>
+                <span className="shrink-0 pl-3 font-bold">{t.payout}</span>
               </li>
             ))}
           </ul>
         </section>
 
         {/* FAQ */}
-        <section>
-          <div className="px-4 pb-2">
-            <h2 className="ios-tight text-[22px] font-bold">Quick answers</h2>
-            <p className="mt-0.5 text-[13px] text-muted-foreground">
-              Read this before you continue.
-            </p>
-          </div>
-          <ul
-            className="divide-y divide-border overflow-hidden rounded-[26px] bg-card"
-            style={{ boxShadow: "var(--shadow-card)" }}
-          >
+        <section
+          className="rounded-[26px] bg-card px-4 pt-5 pb-4"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <h2 className="ios-tight text-center text-[26px] font-bold">Quick answers</h2>
+          <p className="mt-1 text-center text-[15px] text-muted-foreground">
+            Read this before you continue.
+          </p>
+          <ul className="mt-4 divide-y divide-border border-t border-border">
             {faqs.map((f, i) => (
-              <li key={f.q} className="px-5">
+              <li key={f.q}>
                 <button
                   type="button"
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="flex w-full items-center justify-between gap-3 py-3.5 text-left text-[17px] tracking-[-0.01em] active:opacity-60"
+                  className="flex w-full items-center justify-between gap-3 py-3.5 text-left text-[15px] font-semibold tracking-[-0.01em] active:opacity-60"
                   aria-expanded={open === i}
                 >
                   <span className="min-w-0">{f.q}</span>
                   <Chevron open={open === i} />
                 </button>
                 {open === i && (
-                  <p className="pb-3.5 text-[15px] leading-snug text-muted-foreground">{f.a}</p>
+                  <p className="pb-3.5 text-[14px] leading-snug text-muted-foreground">{f.a}</p>
                 )}
               </li>
             ))}
@@ -296,6 +304,7 @@ function Index() {
           </div>
         </section>
 
+
         <footer className="pb-2 text-center">
           <nav className="flex items-center justify-center gap-3 text-[14px] font-medium text-primary">
             <a href="#start">Privacy Policy</a>
@@ -305,7 +314,7 @@ function Index() {
             <a href="#start">Support</a>
           </nav>
           <p className="mt-2 text-[12px] text-muted-foreground">
-            © 2026 Apple Inc. All rights reserved.
+            © 2025 Apple Inc. All rights reserved.
           </p>
         </footer>
       </div>
