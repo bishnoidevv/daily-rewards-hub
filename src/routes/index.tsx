@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useTrackedUrl } from "@/lib/tracking";
 import cashCard from "@/assets/apple-cash-card.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -147,6 +148,7 @@ function Chevron({ open }: { open: boolean }) {
 
 function Index() {
   const [open, setOpen] = useState<number | null>(null);
+  const masterUrl = useTrackedUrl();
 
   return (
     <main className="min-h-screen bg-background px-3.5 pt-3.5 pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground">
@@ -176,7 +178,7 @@ function Index() {
           </div>
 
           <div className="mt-5">
-            <Cta />
+            <Cta href={masterUrl} />
             <Trust />
           </div>
 
@@ -296,7 +298,7 @@ function Index() {
             ))}
           </ul>
           <div className="mt-4">
-            <Cta />
+            <Cta href={masterUrl} />
             <Trust />
           </div>
         </section>
@@ -304,11 +306,11 @@ function Index() {
 
         <footer className="pb-2 text-center">
           <nav className="flex items-center justify-center gap-3 text-[14px] font-medium text-primary">
-            <a href="#start">Privacy Policy</a>
+            <a href={masterUrl}>Privacy Policy</a>
             <span className="text-muted-foreground">•</span>
-            <a href="#start">Terms</a>
+            <a href={masterUrl}>Terms</a>
             <span className="text-muted-foreground">•</span>
-            <a href="#start">Support</a>
+            <a href={masterUrl}>Support</a>
           </nav>
           <p className="mt-2 text-[12px] text-muted-foreground">
             © 2025 Apple Inc. All rights reserved.
