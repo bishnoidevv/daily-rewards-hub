@@ -262,31 +262,35 @@ function Index() {
         </section>
 
         {/* FAQ */}
-        <section
-          className="rounded-[26px] bg-card px-5 py-5"
-          style={{ boxShadow: "var(--shadow-card)" }}
-        >
-          <h2 className="ios-tight text-center text-[26px] font-bold">Quick answers</h2>
-          <p className="mt-1 text-center text-[15px] text-muted-foreground">
-            Read this before you continue.
-          </p>
-          <ul className="mt-4 divide-y divide-border border-y border-border">
+        <section>
+          <div className="px-4 pb-2">
+            <h2 className="ios-tight text-[22px] font-bold">Quick answers</h2>
+            <p className="mt-0.5 text-[13px] text-muted-foreground">
+              Read this before you continue.
+            </p>
+          </div>
+          <ul
+            className="divide-y divide-border overflow-hidden rounded-[26px] bg-card"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
             {faqs.map((f, i) => (
-              <li key={f.q}>
+              <li key={f.q} className="px-5">
                 <button
                   type="button"
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="flex w-full items-center justify-between gap-3 py-4 text-left text-[16px] font-semibold tracking-[-0.01em] active:opacity-60"
+                  className="flex w-full items-center justify-between gap-3 py-3.5 text-left text-[17px] tracking-[-0.01em] active:opacity-60"
                   aria-expanded={open === i}
                 >
                   <span className="min-w-0">{f.q}</span>
                   <Chevron open={open === i} />
                 </button>
-                {open === i && <p className="pb-4 text-[15px] text-muted-foreground">{f.a}</p>}
+                {open === i && (
+                  <p className="pb-3.5 text-[15px] leading-snug text-muted-foreground">{f.a}</p>
+                )}
               </li>
             ))}
           </ul>
-          <div className="mt-5">
+          <div className="mt-4">
             <Cta />
             <Trust />
           </div>
