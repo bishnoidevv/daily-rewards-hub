@@ -314,7 +314,7 @@ function Index() {
             <a href="#start">Support</a>
           </nav>
           <p className="mt-2 text-[12px] text-muted-foreground">
-            © 2026 Apple Inc. All rights reserved.
+            © 2025 Apple Inc. All rights reserved.
           </p>
         </footer>
       </div>
