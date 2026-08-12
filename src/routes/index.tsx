@@ -62,8 +62,14 @@ const faqs = [
 
 function AppleLogo({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M16.365 1.43c0 1.14-.417 2.09-1.25 2.85-.834.76-1.83 1.2-2.99 1.13-.03-1.06.41-2.03 1.24-2.84.83-.81 1.87-1.24 3-1.14zM20.6 17.02c-.35.81-.77 1.56-1.26 2.26-.67.95-1.22 1.61-1.65 1.98-.5.45-1.04.69-1.62.7-.42 0-.92-.12-1.51-.36-.6-.24-1.14-.36-1.65-.36-.53 0-1.09.12-1.68.36-.6.25-1.08.37-1.45.38-.56.02-1.11-.22-1.65-.72-.46-.4-1.04-1.09-1.73-2.06-.74-1.04-1.35-2.25-1.83-3.62C4.5 14.1 4.24 12.66 4.24 11.3c0-1.56.34-2.9 1.01-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.86-.82.45 0 1.04.14 1.77.41.73.28 1.2.42 1.4.42.15 0 .67-.16 1.55-.49.83-.3 1.53-.43 2.11-.38 1.56.13 2.73.75 3.51 1.86-1.4.85-2.09 2.04-2.07 3.56.01 1.19.44 2.18 1.28 2.96.38.36.81.64 1.28.84-.1.3-.21.58-.33.86z" />
+    <svg
+      viewBox="0 0 170 210"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+      shapeRendering="geometricPrecision"
+    >
+      <path d="M139.7 111.4c.2 23.6 20.7 31.5 21 31.6-.2.6-3.3 11.4-11 22.5-6.6 9.7-13.5 19.3-24.4 19.5-10.7.2-14.2-6.3-26.4-6.3-12.3 0-16 6.1-26.1 6.5-10.5.4-18.5-10.4-25.2-20-14.6-21-25.8-59.4-10.8-85.3 7.5-12.9 20.8-21 35.3-21.2 10.4-.2 20.1 7 26.4 7 6.3 0 18.2-8.6 30.6-7.4 5.2.2 19.9 2.1 29.3 15.9-.8.5-17.5 10.2-17.7 30.2M114.6 31.7C120.2 24.9 124 15.5 123 6c-8.3.3-18.4 5.5-24.2 12.3-5.2 6-9.5 15.6-8.3 24.8 9.3.7 18.5-4.7 24.1-11.4" />
     </svg>
   );
 }
@@ -72,7 +78,7 @@ function Cta({ label = "Start Now" }: { label?: string }) {
   return (
     <a
       href="#start"
-      className="block w-full rounded-full bg-primary py-4 text-center text-lg font-semibold text-primary-foreground transition-transform active:scale-[0.98]"
+      className="flex h-[54px] w-full items-center justify-center rounded-[14px] bg-primary text-[17px] font-semibold tracking-[-0.01em] text-primary-foreground transition-all duration-150 active:scale-[0.97] active:brightness-95"
       style={{ boxShadow: "var(--shadow-cta)" }}
     >
       {label}
@@ -82,10 +88,34 @@ function Cta({ label = "Start Now" }: { label?: string }) {
 
 function Trust() {
   return (
-    <div className="mt-4 text-center">
-      <p className="text-sm font-bold text-foreground">30,000+ Participants This Week</p>
-      <p className="mt-1 text-xs text-muted-foreground">• Secured • No payment required</p>
+    <div className="mt-3.5 text-center">
+      <p className="text-[15px] font-semibold tracking-[-0.01em] text-foreground">
+        30,000+ Participants This Week
+      </p>
+      <p className="mt-1 text-[13px] text-muted-foreground">
+        <span className="text-step-2">•</span> Secured{" "}
+        <span className="text-step-3">•</span> No payment required
+      </p>
     </div>
+  );
+}
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={`h-[18px] w-[18px] shrink-0 text-muted-foreground transition-transform duration-200 ${
+        open ? "rotate-180" : ""
+      }`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
   );
 }
 
@@ -93,23 +123,23 @@ function Index() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-background px-4 py-4 text-foreground">
-      <div className="mx-auto flex w-full max-w-[420px] flex-col gap-5">
+    <main className="min-h-screen bg-background px-3.5 pt-3.5 pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground">
+      <div className="mx-auto flex w-full max-w-[430px] flex-col gap-3.5">
         {/* Hero */}
         <section
           id="start"
-          className="rounded-3xl bg-card p-5"
+          className="rounded-[26px] bg-card px-5 pt-6 pb-5"
           style={{ boxShadow: "var(--shadow-card)" }}
         >
           <div className="text-center">
-            <AppleLogo className="mx-auto h-6 w-6 text-foreground" />
-            <h1 className="mt-2 text-4xl font-bold tracking-tight">Apple Cash Quiz</h1>
-            <p className="mx-auto mt-2 max-w-[320px] text-sm text-muted-foreground">
+            <AppleLogo className="mx-auto h-[26px] w-auto text-foreground" />
+            <h1 className="ios-tight mt-3 text-[34px] leading-[1.06] font-bold">Apple Cash Quiz</h1>
+            <p className="mx-auto mt-2.5 max-w-[320px] text-[15px] leading-snug text-muted-foreground">
               Get Paid $750 in Apple Cash for Finishing 5+ Deals in the Quiz
             </p>
           </div>
 
-          <div className="mt-4 overflow-hidden rounded-2xl">
+          <div className="mt-5 overflow-hidden rounded-[20px]">
             <img
               src={cashCard.url}
               alt="Apple Cash card worth $750"
@@ -124,104 +154,144 @@ function Index() {
             <Trust />
           </div>
 
-          <div
-            className="mt-5 rounded-2xl border border-border bg-card p-4"
-            style={{ boxShadow: "var(--shadow-card)" }}
-          >
-            <div className="flex items-center justify-between text-sm font-bold">
+          <div className="mt-5 rounded-[18px] border border-border bg-secondary/50 p-4">
+            <div className="flex items-center justify-between text-[15px] font-semibold">
               <span>Quiz Progress</span>
               <span className="text-primary">0 of 5</span>
             </div>
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
-              <div className="h-full w-[15%] rounded-full" style={{ background: "var(--gradient-progress)" }} />
+            <div className="mt-3 h-[7px] w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full w-[15%] rounded-full"
+                style={{ background: "var(--gradient-progress)" }}
+              />
             </div>
-            <div className="mt-4 rounded-xl border border-border py-3 text-center text-sm font-bold">
+            <div className="mt-3.5 rounded-[14px] border border-border bg-card py-3 text-center text-[14px] font-semibold">
               Finish 5 Deals to finish the Quiz
             </div>
-            <div className="mt-2 rounded-xl border border-primary/20 bg-primary/8 py-3 text-center text-sm font-bold text-primary">
+            <div className="mt-2 rounded-[14px] border border-primary/20 bg-primary/8 py-3 text-center text-[14px] font-semibold text-primary">
               Get $30 for each finished deal
             </div>
           </div>
         </section>
 
         {/* How it works */}
-        <section className="rounded-3xl bg-foreground p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-          <h2 className="text-center text-2xl font-bold text-background">How it works</h2>
-          <ul className="mt-4 flex flex-col gap-3">
+        <section
+          className="rounded-[26px] bg-foreground px-4 py-5"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <h2 className="ios-tight text-center text-[26px] font-bold text-background">
+            How it works
+          </h2>
+          <ul className="mt-4 flex flex-col gap-2.5">
             {steps.map((s) => (
               <li
                 key={s.n}
-                className="flex items-center gap-3 rounded-full px-3 py-3"
+                className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-[22px] px-3 py-3"
                 style={{ background: s.bg }}
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-card text-sm font-bold text-foreground">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-card text-[13px] font-bold text-foreground">
                   {s.n}
                 </span>
-                <span className="text-sm font-medium text-card">{s.label}</span>
+                <span className="text-[15px] leading-snug font-semibold tracking-[-0.01em] text-card">
+                  {s.label}
+                </span>
               </li>
             ))}
           </ul>
         </section>
 
         {/* Deals */}
-        <section className="rounded-3xl bg-card p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-          <p className="text-sm font-bold text-muted-foreground">Deals You&apos;ll See</p>
-          <h2 className="mt-1 text-2xl font-bold">Choose offers that fit you.</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+        <section
+          className="rounded-[26px] bg-card px-5 py-5"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <p className="text-[13px] font-semibold tracking-wide text-muted-foreground uppercase">
+            Deals You&apos;ll See
+          </p>
+          <h2 className="ios-tight mt-1.5 text-[24px] font-bold">Choose offers that fit you.</h2>
+          <p className="mt-2 text-[15px] text-muted-foreground">
             Pick a category. Finish deals. Earn $30 each.
           </p>
           <ul className="mt-4 flex flex-col gap-2">
             {categories.map((c) => (
               <li
                 key={c}
-                className="rounded-xl border border-primary/15 bg-primary/8 py-3 text-center text-sm font-bold text-primary"
+                className="rounded-[14px] border border-primary/15 bg-primary/8 py-3.5 text-center text-[15px] font-semibold text-primary"
               >
                 {c}
               </li>
             ))}
           </ul>
+        </section>
 
-          <h3 className="mt-6 text-lg font-bold">Payout Tiers</h3>
-          <ul className="mt-3 flex flex-col gap-2">
-            {tiers.map((t) => (
+        {/* Payout tiers */}
+        <section
+          className="rounded-[26px] bg-card px-5 py-5"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <h2 className="ios-tight text-center text-[24px] font-bold">Payout Tiers</h2>
+          <ul className="mt-4 flex flex-col gap-2">
+            {tiers.map((t, i) => (
               <li
                 key={t.deals}
-                className="flex items-center justify-between rounded-xl border border-border px-4 py-3 text-sm font-semibold"
+                className={`flex items-center justify-between rounded-[16px] px-4 py-3.5 text-[15px] font-semibold ${
+                  i === 0
+                    ? "bg-secondary text-foreground"
+                    : i === 1
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-step-2 text-card"
+                }`}
               >
-                <span>{t.deals}</span>
-                <span className="text-primary">{t.payout}</span>
+                <span className="min-w-0 truncate">{t.deals}</span>
+                <span className="shrink-0 pl-3">{t.payout}</span>
               </li>
             ))}
           </ul>
         </section>
 
         {/* FAQ */}
-        <section className="rounded-3xl bg-card p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-          <h2 className="text-2xl font-bold">Quick answers</h2>
-          <p className="mt-1 text-sm text-muted-foreground">Read this before you continue.</p>
-          <ul className="mt-4 divide-y divide-border">
+        <section
+          className="rounded-[26px] bg-card px-5 py-5"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          <h2 className="ios-tight text-center text-[26px] font-bold">Quick answers</h2>
+          <p className="mt-1 text-center text-[15px] text-muted-foreground">
+            Read this before you continue.
+          </p>
+          <ul className="mt-4 divide-y divide-border border-y border-border">
             {faqs.map((f, i) => (
               <li key={f.q}>
                 <button
                   type="button"
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="flex w-full items-center justify-between gap-3 py-4 text-left text-sm font-semibold"
+                  className="flex w-full items-center justify-between gap-3 py-4 text-left text-[16px] font-semibold tracking-[-0.01em] active:opacity-60"
                   aria-expanded={open === i}
                 >
-                  {f.q}
-                  <span className="text-muted-foreground">{open === i ? "−" : "+"}</span>
+                  <span className="min-w-0">{f.q}</span>
+                  <Chevron open={open === i} />
                 </button>
-                {open === i && <p className="pb-4 text-sm text-muted-foreground">{f.a}</p>}
+                {open === i && <p className="pb-4 text-[15px] text-muted-foreground">{f.a}</p>}
               </li>
             ))}
           </ul>
+          <div className="mt-5">
+            <Cta />
+            <Trust />
+          </div>
         </section>
 
-        {/* Footer CTA */}
-        <section className="rounded-3xl bg-card p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-          <Cta />
-          <Trust />
-        </section>
+        <footer className="pb-2 text-center">
+          <nav className="flex items-center justify-center gap-3 text-[14px] font-medium text-primary">
+            <a href="#start">Privacy Policy</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="#start">Terms</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="#start">Support</a>
+          </nav>
+          <p className="mt-2 text-[12px] text-muted-foreground">
+            © 2026 Apple Inc. All rights reserved.
+          </p>
+        </footer>
       </div>
     </main>
   );

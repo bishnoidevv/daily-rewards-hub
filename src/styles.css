@@ -63,6 +63,9 @@
 
 :root {
   --radius: 1rem;
+  --font-ios:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter Tight", system-ui,
+    "Helvetica Neue", sans-serif;
   --background: oklch(0.976 0.002 264);
   --surface: oklch(1 0 0);
   --step-1: oklch(0.68 0.19 22);
@@ -156,9 +159,23 @@
     border-color: var(--color-border);
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-ios);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.024em;
   }
 }
 
@@ -168,4 +185,9 @@
   --color-step-2: var(--step-2);
   --color-step-3: var(--step-3);
   --color-step-4: var(--step-4);
+  --font-ios: var(--font-ios);
+}
+
+@utility ios-tight {
+  letter-spacing: -0.03em;
 }
