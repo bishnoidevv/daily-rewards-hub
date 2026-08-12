@@ -111,7 +111,7 @@ function Index() {
 
           <div className="mt-4 overflow-hidden rounded-2xl">
             <img
-              src={cashCard}
+              src={cashCard.url}
               alt="Apple Cash card worth $750"
               width={1024}
               height={640}
