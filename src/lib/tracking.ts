@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 /** Base affiliate link — campaign name is appended as sub1. */
-export const BASE_URL = "https://www.stw4c9hx.com/D6ZJJ4/K9TM4Q/?source_id=zoro";
+export const BASE_URL = "https://www.stw4c9hx.com/D6ZJJ4/3TJ7N7/?source_id=dezo";
 
 /**
  * Reads the campaign name from the incoming URL (?source=... from TikTok)
