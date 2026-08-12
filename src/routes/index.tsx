@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useTrackedUrl } from "@/lib/tracking";
-import cashCard from "@/assets/apple-cash-card.png.asset.json";
+import cashCard from "@/assets/apple-cash-card.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -169,7 +169,7 @@ function Index() {
 
           <div className="mt-5 overflow-hidden rounded-[20px]">
             <img
-              src={cashCard.url}
+              src={cashCard}
               alt="Apple Cash card worth $750"
               width={1024}
               height={640}
