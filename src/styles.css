@@ -63,6 +63,9 @@
 
 :root {
   --radius: 1rem;
+  --font-ios:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter Tight", system-ui,
+    "Helvetica Neue", sans-serif;
   --background: oklch(0.976 0.002 264);
   --surface: oklch(1 0 0);
   --step-1: oklch(0.68 0.19 22);
