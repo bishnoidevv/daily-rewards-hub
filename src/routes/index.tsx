@@ -201,49 +201,61 @@ function Index() {
         </section>
 
         {/* Deals */}
-        <section
-          className="rounded-[26px] bg-card px-5 py-5"
-          style={{ boxShadow: "var(--shadow-card)" }}
-        >
-          <p className="text-[13px] font-semibold tracking-wide text-muted-foreground uppercase">
+        <section>
+          <p className="px-4 pb-2 text-[13px] font-medium tracking-[0.04em] text-muted-foreground uppercase">
             Deals You&apos;ll See
           </p>
-          <h2 className="ios-tight mt-1.5 text-[24px] font-bold">Choose offers that fit you.</h2>
-          <p className="mt-2 text-[15px] text-muted-foreground">
-            Pick a category. Finish deals. Earn $30 each.
-          </p>
-          <ul className="mt-4 flex flex-col gap-2">
-            {categories.map((c) => (
-              <li
-                key={c}
-                className="rounded-[14px] border border-primary/15 bg-primary/8 py-3.5 text-center text-[15px] font-semibold text-primary"
-              >
-                {c}
-              </li>
-            ))}
-          </ul>
+          <div
+            className="rounded-[26px] bg-card px-5 py-4"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
+            <h2 className="ios-tight text-[22px] leading-tight font-bold">
+              Choose offers that fit you.
+            </h2>
+            <p className="mt-1 text-[15px] leading-snug text-muted-foreground">
+              Pick a category. Finish deals. Earn $30 each.
+            </p>
+            <ul className="mt-2 divide-y divide-border">
+              {categories.map((c) => (
+                <li
+                  key={c}
+                  className="flex items-center justify-between gap-3 py-3.5 text-[17px] leading-snug font-normal tracking-[-0.01em]"
+                >
+                  <span className="min-w-0">{c}</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="h-[17px] w-[17px] shrink-0 text-muted-foreground/70"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m9 6 6 6-6 6" />
+                  </svg>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         {/* Payout tiers */}
-        <section
-          className="rounded-[26px] bg-card px-5 py-5"
-          style={{ boxShadow: "var(--shadow-card)" }}
-        >
-          <h2 className="ios-tight text-center text-[24px] font-bold">Payout Tiers</h2>
-          <ul className="mt-4 flex flex-col gap-2">
-            {tiers.map((t, i) => (
+        <section>
+          <p className="px-4 pb-2 text-[13px] font-medium tracking-[0.04em] text-muted-foreground uppercase">
+            Payout Tiers
+          </p>
+          <ul
+            className="divide-y divide-border overflow-hidden rounded-[26px] bg-card"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
+            {tiers.map((t) => (
               <li
                 key={t.deals}
-                className={`flex items-center justify-between rounded-[16px] px-4 py-3.5 text-[15px] font-semibold ${
-                  i === 0
-                    ? "bg-secondary text-foreground"
-                    : i === 1
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-step-2 text-card"
-                }`}
+                className="flex items-center justify-between px-5 py-3.5 text-[17px] tracking-[-0.01em]"
               >
                 <span className="min-w-0 truncate">{t.deals}</span>
-                <span className="shrink-0 pl-3">{t.payout}</span>
+                <span className="shrink-0 pl-3 font-semibold text-primary">{t.payout}</span>
               </li>
             ))}
           </ul>
