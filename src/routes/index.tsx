@@ -100,10 +100,10 @@ function AppleLogo({ className }: { className?: string }) {
   );
 }
 
-function Cta({ label = "Start Now" }: { label?: string }) {
+function Cta({ href, label = "Start Now" }: { href: string; label?: string }) {
   return (
     <a
-      href="#start"
+      href={href}
       className="flex h-[54px] w-full items-center justify-center rounded-[14px] bg-primary text-[17px] font-semibold tracking-[-0.01em] text-primary-foreground transition-all duration-150 active:scale-[0.97] active:brightness-95"
       style={{ boxShadow: "var(--shadow-cta)" }}
     >
