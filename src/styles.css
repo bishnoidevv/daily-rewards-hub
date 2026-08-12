@@ -191,3 +191,18 @@
 @utility ios-tight {
   letter-spacing: -0.03em;
 }
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@utility gradient-flow {
+  background-image: var(--gradient-progress);
+  background-size: 200% 100%;
+  animation: gradient-flow 2.4s linear infinite;
+}

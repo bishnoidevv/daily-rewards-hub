@@ -186,10 +186,7 @@ function Index() {
               <span className="text-primary">0 of 5</span>
             </div>
             <div className="mt-3 h-[7px] w-full overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full w-[15%] rounded-full"
-                style={{ background: "var(--gradient-progress)" }}
-              />
+              <div className="gradient-flow h-full w-[15%] rounded-full" />
             </div>
             <div className="mt-3.5 rounded-[14px] border border-border bg-card py-3 text-center text-[14px] font-semibold">
               Finish 5 Deals to finish the Quiz
