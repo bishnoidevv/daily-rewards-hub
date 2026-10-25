@@ -178,7 +178,7 @@ function Index() {
           </div>
 
           <div className="mt-5">
-            <Cta href={masterUrl} />
+            <Cta href={https://www.stw4c9hx.com/D6ZJJ4/3WX4DS/?source_id=zoro} />
             <Trust />
           </div>
 
